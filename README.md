@@ -1,10 +1,8 @@
-![Image Alt Text](screenshots/header.png)
+# Krogress
 
-# JetpackLoading
+**Krogress** is a collection of nice loading animations for **Compose Multiplatform**, adapted from the famous [AVLoadingIndicatorView](https://github.com/HarlonWang/AVLoadingIndicatorView) library.
 
-JetpackLoading is a collection of nice loading animations in Jetpack Compose, adapted from the famous [AVLoadingIndicatorView](https://github.com/HarlonWang/AVLoadingIndicatorView) library.
-
-See the animations in the [Demo](https://github.com/MahboubehSeyedpour/JetpackLoading#demo) section and their use in [Usage](https://github.com/MahboubehSeyedpour/JetpackLoading#usage)
+See the animations in the [Demo](https://github.com/easternkite/krogress#demo) section and their use in [Usage](https://github.com/easternkite/krogress#usage)
 
 
 
