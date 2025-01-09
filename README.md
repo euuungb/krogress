@@ -16,31 +16,9 @@ Indicators #1                                                                |  
 
 
 ## Usage
+It's very simple to use. Just add component where you want
 
-- #### Step 1
-  Add it in settings.gradle:
-  
-  ```bash
-  allprojects {
-    repositories {
-      ...
-      maven { url 'https://jitpack.io' }
-    }
-  }
-  
-   
-- #### Step 2
-  Add the dependency
-  
-  ```bash
-  dependencies {
-	implementation 'com.github.MahboubehSeyedpour:jetpack-loading:1.1.0'
-  }
-  
-   
-- #### Step 3  
-  It's very simple to use. Just add component where you want
-  ```bash
+```kotlin
    @Composable
    fun Greeting() {
        ...
@@ -50,7 +28,7 @@ Indicators #1                                                                |  
   ```
   
   You can also control the details of the animations using parameters
-  ```bash
+  ```kotlin
    @Composable
    fun Greeting() {
        ...
@@ -121,17 +99,11 @@ The indicators are as follows:
  	Row 2
  	- `CircleShapeIndicator`
 
-
-## 🔗 Contact
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahboubehseyedpour)
-
-[![GMail](https://img.shields.io/badge/gmail-1DA1F2?style=for-the-badge&logo=gmail&logoColor=Red)](mailto:https://www.linkedin.com/in/mahboubehseyedpour)
-
-
-## License
+## Forked License
 
 ```
 Copyright 2023 Mahboubeh Seyedpour
+Modified by easternkite in 2025
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

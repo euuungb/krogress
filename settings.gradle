@@ -14,6 +14,6 @@ dependencyResolutionManagement {
         mavenLocal()
     }
 }
-rootProject.name = "JetpackLoading"
-include ':app'
-include ':jetpack-loading'
+rootProject.name = "Krogress"
+include ':androidApp'
+include ':krogress'
