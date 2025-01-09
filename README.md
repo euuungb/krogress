@@ -97,7 +97,7 @@ The indicators are as follows:
  	Row 2
  	- `CircleShapeIndicator`
 
-## Forked License
+## License
 
 ```
 Copyright 2023 Mahboubeh Seyedpour
