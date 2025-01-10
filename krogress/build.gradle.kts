@@ -1,15 +1,13 @@
-import io.grpc.internal.SharedResourceHolder.release
-import org.jetbrains.kotlin.config.JvmAnalysisFlags.useIR
-
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("maven-publish")
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.nexus.publish)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.easternkite.krogress"
-    compileSdk = 33
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -37,15 +35,11 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.3"
     }
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation(platform("androidx.compose:compose-bom:2022.10.00"))
-    implementation("androidx.compose.material3:material3")
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.material3)
 }
 
 afterEvaluate {

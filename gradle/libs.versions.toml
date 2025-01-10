@@ -1,0 +1,42 @@
+[versions]
+kotlin = "2.1.0"
+agp = "8.7.3"
+androidx-activityCompose = "1.9.3"
+lifecycleRuntimeKtx = "2.8.7"
+composeBom = "2024.12.01"
+coreKtx = "1.15.0"
+cmp-plugin = "1.7.3"
+nexus-publish = "0.30.0"
+dokka = "2.0.0"
+uiTestJunit4Android = "1.7.6"
+napier = "2.7.1"
+
+
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+androidx-ui-test-junit4-android = { module = "androidx.compose.ui:ui-test-junit4-android", version.ref = "uiTestJunit4Android" }
+androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "uiTestJunit4Android" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom"}
+compose-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose-foundation = { module = "androidx.compose.foundation:foundation" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+
+napier = { module = "io.github.aakira:napier", version.ref = "napier"}
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "cmp-plugin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+nexus-publish = { id = "com.vanniktech.maven.publish", version.ref = "nexus-publish" }
