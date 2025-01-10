@@ -35,7 +35,7 @@ It's very simple to use. Just add component where you want
    }
   ```
 
-Enjoy Krogress 😊
+Enjoy Krogress 😊
   
 ##  Indicators
 
