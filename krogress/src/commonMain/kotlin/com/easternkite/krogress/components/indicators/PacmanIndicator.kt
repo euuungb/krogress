@@ -23,29 +23,37 @@ import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * A composable function that displays a Pac-Man loading indicator animation.
+ *
+ * The indicator consists of a Pac-Man shape that opens and closes its mouth,
+ * along with a circular "dot" that moves in front of the Pac-Man.
+ *
+ * @param modifier Modifier to be applied to the Canvas.
+ * @param colors [PacmanIndicatorColors] to customize the colors of the indicator.
+ * @param animationDuration Duration in milliseconds of a single animation cycle.
+ */
 @Composable
 fun PacmanIndicator(
-    color: Color = Color.White,
-    ballDiameter: Float = 40f,
-    canvasSize: Dp = 40.dp,
+    modifier: Modifier = Modifier,
+    colors: PacmanIndicatorColors = PacmanIndicatorColors.Default(),
     animationDuration: Int = 500
 ) {
-
     val lipStart = 0f
     val lipEnd = 45f
 
     val positionAnimation by rememberInfiniteTransition().animateFloat(
-        initialValue = ballDiameter,
-        targetValue = -ballDiameter,
+        initialValue = -1f,
+        targetValue = -6f,
         animationSpec = infiniteRepeatable(
             animation = tween(durationMillis = animationDuration, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Restart
@@ -61,22 +69,46 @@ fun PacmanIndicator(
         )
     )
 
-    Canvas(modifier = Modifier.size(canvasSize)) {
+    Canvas(modifier = modifier.size(48.dp)) {
+        val circleRadius = size.width / 10
+        drawCircle(
+            color = colors.circleColor,
+            radius = circleRadius,
+            center = Offset(
+                x = size.width + (positionAnimation * circleRadius),
+                y = size.height / 2
+            ),
+        )
+
+        val diameter = size.height / 1.3f
+        val arcOffsetY = (size.height - diameter) / 2
         drawArc(
-            color = color,
+            color = colors.arcColor,
             startAngle = lipAnimation,
             sweepAngle = 360 - lipAnimation.times(2),
-            topLeft = Offset(0f, 0f),
-            size = Size(size.width, size.height),
+            topLeft = Offset(0f, arcOffsetY),
+            size = Size(diameter, diameter),
             useCenter = true
         )
-        drawCircle(
-            color = color,
-            radius = ballDiameter / 2,
-            center = Offset(
-                x = size.width + positionAnimation,
-                y = size.height / 2
+    }
+}
+
+/**
+ * Defines the colors used for the [PacmanIndicator].
+ *
+ * @property arcColor The color of the Pacman's arc (the mouth).
+ * @property circleColor The color of the Pacman's circle (the body).
+ */
+data class PacmanIndicatorColors(
+    val arcColor: Color,
+    val circleColor: Color,
+) {
+    companion object {
+        val Default = @Composable {
+            PacmanIndicatorColors(
+                arcColor = MaterialTheme.colorScheme.primary,
+                circleColor = MaterialTheme.colorScheme.primary,
             )
-        )
+        }
     }
 }
