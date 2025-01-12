@@ -32,6 +32,7 @@ import com.easternkite.krogress.components.indicators.CircularPulsatingIndicator
 import com.easternkite.krogress.components.indicators.CubeTransitionIndicator
 import com.easternkite.krogress.components.indicators.LineSpinFadeLoaderIndicator
 import com.easternkite.krogress.components.indicators.PacmanIndicator
+import com.easternkite.krogress.components.indicators.PacmanIndicatorColors
 import com.easternkite.krogress.components.indicators.PulsatingDot
 import com.easternkite.krogress.components.indicators.SemiCircleSpinIndicator
 import com.easternkite.krogress.components.indicators.SquareSpinIndicator
@@ -48,7 +49,7 @@ fun IndicatorGrid() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.primary),
+            .background(MaterialTheme.colorScheme.primaryContainer),
         verticalArrangement = Arrangement.SpaceEvenly
     ) {
         // ------------------ Row #1 ----------------------
@@ -144,7 +145,12 @@ fun IndicatorGrid() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             TriangleSpinIndicator()
-            PacmanIndicator()
+            PacmanIndicator(
+                colors = PacmanIndicatorColors.Default().copy(
+                    arcColor = MaterialTheme.colorScheme.onPrimary,
+                    circleColor = MaterialTheme.colorScheme.error
+                )
+            )
             GridIndicator(animationType = GridAnimationType.BEATING)
             SemiCircleSpinIndicator(modifier = Modifier.size(48.dp))
         }
