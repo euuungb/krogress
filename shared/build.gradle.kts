@@ -5,15 +5,10 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
 
 plugins {
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.nexus.publish)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.compose.multiplatform)
 }
-
-val groupId = "io.github.easternkite"
-val artifactId = "krogress"
-val version = "0.1.0"
 
 kotlin {
     androidTarget {
@@ -66,6 +61,7 @@ kotlin {
             implementation(compose.material3)
 
             implementation(libs.napier)
+            implementation(project(":krogress"))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -79,7 +75,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.easternkite.krogress"
+    namespace = "com.easternkite.krogress.shared"
     compileSdk = 35
 
     defaultConfig {
@@ -102,9 +98,4 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-}
-
-dependencies {
-    implementation(platform(libs.compose.bom))
-    implementation(libs.compose.material3)
 }
