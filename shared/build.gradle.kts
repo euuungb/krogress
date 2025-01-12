@@ -32,8 +32,9 @@ kotlin {
         macosArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "krogress"
+            baseName = "shared"
             isStatic = true
+            export(project(":krogress"))
         }
     }
 
@@ -61,7 +62,7 @@ kotlin {
             implementation(compose.material3)
 
             implementation(libs.napier)
-            implementation(project(":krogress"))
+            api(project(":krogress"))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
