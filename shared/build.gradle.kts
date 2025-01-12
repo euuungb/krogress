@@ -47,7 +47,7 @@ kotlin {
     }
 
     sourceSets {
-        val desktopTest by getting
+        val desktopMain by getting
 
         androidMain.dependencies {
             implementation(project.dependencies.platform(libs.compose.bom))
@@ -68,9 +68,15 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.uiTest)
         }
-        desktopTest.dependencies {
-            implementation(compose.desktop.currentOs)
+        desktopMain.dependencies {
+            implementation(compose.desktop.macos_arm64)
         }
+    }
+}
+
+compose.desktop {
+    application {
+        mainClass = "com.easternkite.krogress.sample.MainKt"
     }
 }
 
