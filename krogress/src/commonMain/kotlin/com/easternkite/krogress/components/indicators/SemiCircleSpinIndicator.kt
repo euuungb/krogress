@@ -29,9 +29,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * A composable function that displays a semi-circle spinning animation.
+ *
+ * The animation is achieved by rotating a semi-circle arc continuously.
+ *
+ * @param modifier Modifier to be applied to the canvas.
+ * @param color The color of the semi-circle arc. Default is [Color.White].
+ * @param startAngle The starting angle of the arc in degrees. Default is -90f.
+ * @param endAngle The ending angle of the arc in degrees. Default is 270f.
+ * @param sweepAngle The angle (in degrees) to sweep when drawing the arc. Default is 180f, which creates a semi-circle.
+ * @param animationDuration The duration of the animation in milliseconds. Default is 600.
+ */
 @Composable
 fun SemiCircleSpinIndicator(
     modifier: Modifier = Modifier,
@@ -51,7 +62,7 @@ fun SemiCircleSpinIndicator(
         )
     )
 
-    Canvas(modifier = modifier) {
+    Canvas(modifier = modifier.size(48.dp)) {
         drawArc(
             color = color,
             startAngle = rotation,
