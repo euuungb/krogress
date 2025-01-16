@@ -8,6 +8,7 @@ import androidx.compose.ui.unit.dp
 import com.easternkite.krogress.components.indicators.PacmanIndicator
 import com.easternkite.krogress.components.indicators.PulsatingDot
 import com.easternkite.krogress.components.indicators.SemiCircleSpinIndicator
+import com.easternkite.krogress.components.indicators.gridIndicator.BallGridBeatIndicator
 
 @Composable
 @Preview
@@ -25,4 +26,13 @@ fun LineSpinFadeLoaderIndicatorPreview() {
 @Preview
 fun PulsatingDotPreview() {
     PulsatingDot(modifier = Modifier.size(200.dp), dotsCount = 3, animationDuration = 600)
+}
+
+@Composable
+@Preview
+fun GridIndicatorPreview() {
+    BallGridBeatIndicator(
+        spanCount = 5,
+        modifier = Modifier.size(100.dp)
+    )
 }
