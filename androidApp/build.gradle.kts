@@ -56,4 +56,8 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(project(":shared"))
     debugImplementation(libs.compose.ui.tooling)
+
+    androidTestImplementation(libs.junit)
+    androidTestImplementation(libs.junit.ext)
+    androidTestImplementation(libs.androidx.test.runner)
 }

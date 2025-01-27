@@ -10,11 +10,16 @@ nexus-publish = "0.30.0"
 dokka = "2.0.0"
 uiTestJunit4Android = "1.7.6"
 napier = "2.7.1"
-
-
+monitor = "1.7.2"
+junit = "4.13.2"
+junit-ext = "1.2.1"
+runner = "1.6.2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+junit = { module = "junit:junit", version.ref = "junit" }
+junit-ext = {module = "androidx.test.ext:junit", version.ref = "junit-ext"}
+androidx-test-runner = {module = "androidx.test:runner", version.ref = "runner"}
 
 androidx-ui-test-junit4-android = { module = "androidx.compose.ui:ui-test-junit4-android", version.ref = "uiTestJunit4Android" }
 androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "uiTestJunit4Android" }
@@ -30,6 +35,7 @@ compose-foundation = { module = "androidx.compose.foundation:foundation" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
 
 napier = { module = "io.github.aakira:napier", version.ref = "napier"}
+androidx-monitor = { group = "androidx.test", name = "monitor", version.ref = "monitor" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
