@@ -18,7 +18,7 @@ fun PacmanIndicatorPreview() {
 
 @Composable
 @Preview
-fun LineSpinFadeLoaderIndicatorPreview() {
+fun SemiCircleSpinIndicatorPreview() {
     SemiCircleSpinIndicator()
 }
 

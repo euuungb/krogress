@@ -13,11 +13,13 @@ napier = "2.7.1"
 monitor = "1.7.2"
 junit = "4.13.2"
 junit-ext = "1.2.1"
+test-core = "1.6.1"
 runner = "1.6.2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 junit = { module = "junit:junit", version.ref = "junit" }
+androidx-test-core = {module = "androidx.test:core-ktx", version.ref = "test-core"}
 junit-ext = {module = "androidx.test.ext:junit", version.ref = "junit-ext"}
 androidx-test-runner = {module = "androidx.test:runner", version.ref = "runner"}
 

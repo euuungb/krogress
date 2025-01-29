@@ -57,6 +57,7 @@ dependencies {
     implementation(project(":shared"))
     debugImplementation(libs.compose.ui.tooling)
 
+    androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.junit.ext)
     androidTestImplementation(libs.androidx.test.runner)

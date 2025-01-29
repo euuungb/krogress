@@ -1,9 +1,7 @@
 package com.easternkite.krogress
 
 import androidx.test.platform.app.InstrumentationRegistry
-
 import org.junit.Test
-
 import org.junit.Assert.*
 
 /**

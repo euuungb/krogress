@@ -32,13 +32,13 @@ fun GridIndicator(
 ) {
     when (animationType) {
         GridAnimationType.BEATING -> BallGridBeatIndicator(
-            color,
-            ballDiameter,
-            verticalSpace,
-            horizontalSpace,
-            minAlpha,
-            maxAlpha,
-            animationDuration,
+//            color,
+//            ballDiameter,
+//            verticalSpace,
+//            horizontalSpace,
+//            minAlpha,
+//            maxAlpha,
+//            animationDuration,
         )
 
         GridAnimationType.PULSATING -> GridPulsatingDot(
