@@ -170,7 +170,10 @@ fun NewIndicators() {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 PacmanIndicator(
-                    colors = PacmanIndicatorColors.Default().copy()
+                    colors = PacmanIndicatorColors.Default().copy(
+                        arcColor = MaterialTheme.colorScheme.onPrimary,
+                        circleColor = MaterialTheme.colorScheme.onPrimary
+                    )
                 )
                 SemiCircleSpinIndicator()
                 PulsatingDot()
