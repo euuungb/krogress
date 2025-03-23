@@ -7,7 +7,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -37,10 +39,12 @@ import com.easternkite.krogress.components.indicators.PulsatingDot
 import com.easternkite.krogress.components.indicators.SemiCircleSpinIndicator
 import com.easternkite.krogress.components.indicators.SquareSpinIndicator
 import com.easternkite.krogress.components.indicators.TriangleSpinIndicator
+import com.easternkite.krogress.components.indicators.gridIndicator.BallGridBeatIndicator
 import com.easternkite.krogress.components.indicators.gridIndicator.GridIndicator
 import com.easternkite.krogress.components.indicators.lineScaleIndicator.LineScaleIndicator
 import com.easternkite.krogress.enums.GridAnimationType
 import com.easternkite.krogress.enums.PunchType
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun IndicatorGrid() {
@@ -155,4 +159,29 @@ fun IndicatorGrid() {
             SemiCircleSpinIndicator(modifier = Modifier.size(48.dp))
         }
     }
+}
+
+@Composable
+fun NewIndicators() {
+    LazyColumn(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.primary).padding(vertical = 16.dp)) {
+        item {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                PacmanIndicator(
+                    colors = PacmanIndicatorColors.Default().copy()
+                )
+                SemiCircleSpinIndicator()
+                PulsatingDot()
+                BallGridBeatIndicator()
+            }
+        }
+    }
+}
+
+@Preview
+@Composable
+fun IndicatorPreview() {
+    NewIndicators()
 }
